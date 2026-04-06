@@ -13,6 +13,8 @@ employees = [
     {"name": "Максим Соколов", "department": "IT", "salary": 160000, "age": 29, "experience": 6}
 ]
 
+# исходный массив меняется так как в задание ничего дополнительно не указано
+
 def getAge(employee):
     return employee["age"]
 
@@ -20,12 +22,14 @@ def getSalary(employee):
     return employee["salary"]
 
 def sortSalaryMaxToMin(employees):
-    return sorted(employees, key=getSalary)
+    return sorted(employees, key=getSalary, reverse=True)
 
 def sortAgeMinToMax(employees):
     return sorted(employees, key=getAge)
 
 sortedBySalary = sortSalaryMaxToMin(employees)
 sortedByAge = sortAgeMinToMax(employees)
+print("Сортировка по зарплате:")
 print(sortedBySalary)
+print("Сортировка по возрасту:")
 print(sortedByAge)
